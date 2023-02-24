@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 const URL = 'http://localhost:3500/students';
@@ -28,5 +28,16 @@ export class DataService {
         };
       })
     );
+  }
+
+  createStudent(data: any) {    
+    let httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    
+    return this.http.post(URL, data, {
+      headers: httpHeaders,
+      observe: 'response',
+    });
   }
 }

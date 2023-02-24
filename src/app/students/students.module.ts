@@ -6,13 +6,15 @@ import { StudentsComponent } from './students.component';
 import { MaterialModule } from '../shared/material.module';
 import { TableComponent } from './table/table.component';
 import { ViewComponent } from './view/view.component';
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
   declarations: [
     StudentsComponent,
     TableComponent,
-    ViewComponent
+    ViewComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,

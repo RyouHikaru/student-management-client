@@ -1,11 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
-
-export interface Student {
-  id: string;
-  name: string;
-  grade: number;
-}
+import { Student } from '../student';
 
 @Component({
   selector: 'app-table',
@@ -18,8 +13,4 @@ export class TableComponent {
   displayedColumns: string[] = ['no', 'name', 'grade', 'view'];
   
   @ViewChild(MatTable) table: MatTable<Student> | undefined;
-  
-  addData() {
-    
-  }
 }

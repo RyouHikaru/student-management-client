@@ -1,8 +1,8 @@
 <div class="flex-container">
-  <button mat-raised-button color="primary" (click)="addData()" class="button">
+  <button mat-raised-button color="primary" class="button" [routerLink]="['new']">
     Add student
   </button>
-  <!-- let element" [routerLink]="[element._id] -->
+
   <table mat-table [dataSource]="students" class="mat-elevation-z8 table">
     <ng-container matColumnDef="no">
       <th mat-header-cell *matHeaderCellDef>No.</th>
@@ -28,8 +28,6 @@
       </td>
     </ng-container>
     
-    
-  
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>

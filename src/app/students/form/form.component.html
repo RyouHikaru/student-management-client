@@ -1,0 +1,15 @@
+<div class="flex-container form">
+  <mat-form-field appearance="fill">
+    <mat-label>Full name</mat-label>
+    <input matInput [formControl]="fullname" required pattern="[a-zA-Z ]*">
+    <mat-error *ngIf="fullname.invalid">{{getNameErrorMsg()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Grade</mat-label>
+    <input matInput [formControl]="grade" required>
+    <mat-error *ngIf="grade.invalid">{{getGradeErrorMsg()}}</mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="saveStudent()" class="button">
+    Save
+  </button>
+</div>
