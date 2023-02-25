@@ -7,6 +7,7 @@ import { MaterialModule } from '../shared/material.module';
 import { TableComponent } from './table/table.component';
 import { ViewComponent } from './view/view.component';
 import { FormComponent } from './form/form.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormComponent } from './form/form.component';
     StudentsComponent,
     TableComponent,
     ViewComponent,
-    FormComponent
+    FormComponent,
+    EditFormComponent
   ],
   imports: [
     CommonModule,

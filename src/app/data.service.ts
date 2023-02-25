@@ -30,14 +30,35 @@ export class DataService {
     );
   }
 
-  createStudent(data: any) {    
-    let httpHeaders = new HttpHeaders({
+  createStudent(data: any) {
+    const httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    
+
     return this.http.post(URL, data, {
       headers: httpHeaders,
       observe: 'response',
     });
+  }
+
+  updateStudent(data: any) {
+    const httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    return this.http.put(URL, data, {
+      headers: httpHeaders,
+    });
+  }
+
+  deleteStudent(data: any) {
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: data,
+    };
+
+    return this.http.delete(URL, options);
   }
 }

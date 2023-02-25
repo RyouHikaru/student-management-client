@@ -6,8 +6,8 @@
       <mat-card-subtitle>{{ student?.grade }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions class="custom-card-actions">
-      <button mat-raised-button color="primary">Edit</button>
-      <button mat-raised-button color="warn">Delete</button>
+      <button mat-raised-button color="primary" [routerLink]="['/students/edit', student?._id]">Edit</button>
+      <button mat-raised-button color="warn" (click)="deleteStudent()">Delete</button>
     </mat-card-actions>
   </mat-card>
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -11,7 +11,8 @@ export class ViewComponent {
   student: any;
   constructor(
     private route: ActivatedRoute,
-    private dataService: DataService
+    private router: Router,
+    private dataService: DataService,
   ) {}
 
   ngOnInit() {
@@ -19,5 +20,10 @@ export class ViewComponent {
     this.dataService.getOneStudent(id).subscribe((data) => {
       this.student = data.student;
     });
+  }
+
+  deleteStudent() {
+    this.dataService.deleteStudent({ id: this.student._id }).subscribe();
+    this.router.navigate(['/']);
   }
 }
